@@ -3,20 +3,20 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>big-fool</artifactId>
+        <artifactId>big-fool-common</artifactId>
         <groupId>top.lconcise</groupId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>big-fool-common</artifactId>
-    <packaging>pom</packaging>
+    <artifactId>big-fool-common-swagger</artifactId>
 
-    <modules>
-        <module>big-fool-common-core</module>
-        <module>big-fool-common-mybatis</module>
-        <module>big-fool-common-swagger</module>
-    </modules>
-
-
+    <dependencies>
+        <!--swagger-->
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-boot-starter</artifactId>
+            <version>${swagger.fox.version}</version>
+        </dependency>
+    </dependencies>
 </project>
