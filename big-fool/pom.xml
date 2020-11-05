@@ -21,6 +21,7 @@
         <module>big-fool-common</module>
         <module>big-fool-template</module>
         <module>big-fool-screw</module>
+        <module>big-fool-generator</module>
     </modules>
 
     <properties>
