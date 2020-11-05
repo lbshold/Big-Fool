@@ -20,6 +20,7 @@
     <modules>
         <module>big-fool-common</module>
         <module>big-fool-template</module>
+        <module>big-fool-screw</module>
     </modules>
 
     <properties>
