@@ -12,7 +12,7 @@
     <artifactId>big-fool-common-swagger</artifactId>
 
     <dependencies>
-        <!--swagger-->
+        <!--swagger 3.0-->
         <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-boot-starter</artifactId>
