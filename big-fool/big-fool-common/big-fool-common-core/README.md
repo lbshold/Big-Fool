@@ -13,3 +13,7 @@
 #### 4. 全局时间序列化配置：Date、Java8时间序列化
          
         JavaTimeModule、JacksonConfiguration
+        
+#### 5. RestTemplate：Http请求工具
+
+        RestTemplateConfiguration
