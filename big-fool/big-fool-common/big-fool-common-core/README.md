@@ -17,3 +17,8 @@
 #### 5. RestTemplate：Http请求工具
 
         RestTemplateConfiguration
+        
+#### 6. 自定义线程池 ThreadPoolTaskExecutor
+
+        AsyncThreadPoolConfig
+        
