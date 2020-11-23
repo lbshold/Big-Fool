@@ -38,12 +38,19 @@ public class ThreadLocalDemo {
      *   b.必须回收自定义的ThreadLocal变量，尤其在线程池场景下，线程经常会被复用，
      *   如果不清理自定义的 ThreadLocal 变量，可能会影响后续业务逻辑和造成内存泄露等问题。
      *   尽量在代理中使用 try-finally 块进行回收。
+     *   c.Random  ThreadLocalRandom
      *
      */
 
     private static final AtomicInteger atomicInteger = new AtomicInteger();
 
     private static final ThreadLocal<Integer> threadId = new ThreadLocal<Integer>() {
+        @Override
+        protected Integer initialValue() {
+            return atomicInteger.getAndIncrement();
+        }
+    };
+    private static final ThreadLocal<Integer> threadId02 = new ThreadLocal<Integer>() {
         @Override
         protected Integer initialValue() {
             return atomicInteger.getAndIncrement();
@@ -57,6 +64,7 @@ public class ThreadLocalDemo {
     private static final ThreadLocal<Integer> threadId2 = ThreadLocal.withInitial(() -> atomicInteger.getAndIncrement());
 
     public static void main(String[] args) {
+        System.out.println(threadId.get());
         System.out.println(threadId.get());
 
         new Thread(() -> System.out.println(threadId.get())).start();
