@@ -1,4 +1,4 @@
-package top.lconcise.sys.entity;
+package top.lconcise.sys.domain.entity;
 
 import com.baomidou.mybatisplus.annotation.TableName;
 import io.swagger.annotations.ApiModel;
@@ -10,7 +10,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * 用户角色中间表.
+ * 部门关系表(中间表).
  * </p>
  *
  * @author liusj
@@ -18,17 +18,17 @@ import java.io.Serializable;
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
-@TableName("sys_user_role")
-@ApiModel(value="UserRole对象", description="")
-public class UserRole implements Serializable {
+@TableName("sys_dept_relation")
+@ApiModel(value="DeptRelation对象", description="")
+public class DeptRelation implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    @ApiModelProperty(value = "用户ID")
-    private Long userId;
+    @ApiModelProperty(value = "父节点")
+    private Long father;
 
-    @ApiModelProperty(value = "角色ID")
-    private Long roleId;
+    @ApiModelProperty(value = "子节点")
+    private Long son;
 
 
 }

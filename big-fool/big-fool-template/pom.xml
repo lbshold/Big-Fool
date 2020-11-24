@@ -29,6 +29,12 @@
             <artifactId>big-fool-common-swagger</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-security</artifactId>
+            <version>2.2.0.RELEASE</version>
+        </dependency>
     </dependencies>
 
 </project>

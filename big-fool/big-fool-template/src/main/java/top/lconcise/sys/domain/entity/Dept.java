@@ -1,4 +1,4 @@
-package top.lconcise.sys.entity;
+package top.lconcise.sys.domain.entity;
 
 import com.baomidou.mybatisplus.annotation.TableName;
 import io.swagger.annotations.ApiModel;
@@ -25,13 +25,13 @@ public class Dept implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    private Integer id;
+    private Long id;
 
     @ApiModelProperty(value = "部门名称")
     private String name;
 
     @ApiModelProperty(value = "父节点")
-    private Integer parentId;
+    private Long parentId;
 
     @ApiModelProperty(value = "排序")
     private Integer sort;

@@ -1,7 +1,7 @@
 package top.lconcise.sys.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import top.lconcise.sys.entity.Dept;
+import top.lconcise.sys.domain.entity.Dept;
 
 /**
  * <p>

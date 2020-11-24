@@ -1,4 +1,4 @@
-package top.lconcise.sys.entity;
+package top.lconcise.sys.domain.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
@@ -43,7 +43,7 @@ public class User implements Serializable {
 
     @ApiModelProperty(value = "部门ID")
     @TableField("dept_Id")
-    private Integer deptId;
+    private Long deptId;
 
     @ApiModelProperty(value = "创建时间")
     private LocalDateTime createTime;

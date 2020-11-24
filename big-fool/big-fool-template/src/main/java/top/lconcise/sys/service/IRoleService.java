@@ -1,7 +1,7 @@
 package top.lconcise.sys.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import top.lconcise.sys.entity.Role;
+import top.lconcise.sys.domain.entity.Role;
 
 /**
  * <p>
