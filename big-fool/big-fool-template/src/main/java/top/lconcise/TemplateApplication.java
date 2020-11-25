@@ -5,7 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-@MapperScan("top.lconcise.mapper")
+@MapperScan("top.lconcise.sys.mapper")
 public class TemplateApplication {
 
     public static void main(String[] args) {

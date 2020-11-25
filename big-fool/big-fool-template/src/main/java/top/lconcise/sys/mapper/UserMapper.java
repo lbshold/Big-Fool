@@ -2,6 +2,7 @@ package top.lconcise.sys.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import top.lconcise.sys.domain.entity.User;
+import top.lconcise.sys.domain.vo.UserVO;
 
 /**
  * <p>
@@ -13,4 +14,10 @@ import top.lconcise.sys.domain.entity.User;
  */
 public interface UserMapper extends BaseMapper<User> {
 
+    /**
+     * 根据用户id获取用户信息.
+     * @param userId
+     * @return
+     */
+    UserVO getUserVOById(Long userId);
 }

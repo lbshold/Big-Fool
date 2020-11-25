@@ -3,6 +3,7 @@ package top.lconcise.sys.service;
 import com.baomidou.mybatisplus.extension.service.IService;
 import top.lconcise.sys.domain.dto.UserDTO;
 import top.lconcise.sys.domain.entity.User;
+import top.lconcise.sys.domain.vo.UserVO;
 
 /**
  * <p>
@@ -29,4 +30,12 @@ public interface IUserService extends IService<User> {
      * @return
      */
     Boolean updateUser(UserDTO userDTO);
+
+    /**
+     * 根据id查询用户信息.
+     *
+     * @param id
+     * @return
+     */
+    UserVO getUserVoById(Long id);
 }

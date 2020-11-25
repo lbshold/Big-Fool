@@ -2,4 +2,50 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="top.lconcise.sys.mapper.UserMapper">
 
+    <!--userVO结果集-->
+    <resultMap id="userVoResultMap" type="top.lconcise.sys.domain.vo.UserVO">
+        <id column="userId" property="userId"/>
+        <result column="username" property="username"/>
+        <result column="password" property="password"/>
+        <result column="phone" property="phone"/>
+        <result column="create_time" property="createTime"/>
+        <result column="update_time" property="updateTime"/>
+        <result column="is_locked" property="locked"/>
+        <result column="deptId" property="deptId"/>
+        <result column="deptName" property="deptName"/>
+        <collection property="roleList" ofType="top.lconcise.sys.domain.entity.Role">
+            <id column="roleId" property="roleId"/>
+            <result column="roleName" property="roleName"/>
+            <result column="roleCode" property="roleCode"/>
+        </collection>
+    </resultMap>
+
+    <sql id="userRoleDeptSql">
+            user.user_id AS userId,
+            user.username,
+            user.`password`,
+            user.phone,
+            user.create_time,
+            user.update_time,
+            user.is_locked,
+            r.role_id AS roleId,
+            r.role_name AS roleName,
+            r.role_code AS roleCode,
+            d.dept_Id AS deptId,
+            d.`name` AS deptName
+    </sql>
+
+    <select id="getUserVOById" resultMap="userVoResultMap">
+        SELECT
+            <include refid="userRoleDeptSql"/>
+        FROM
+            sys_user AS `user`
+        LEFT JOIN sys_user_role AS ur ON ur.user_id = ur.user_id
+        LEFT JOIN sys_role AS r ON ur.role_id = r.role_id
+        LEFT JOIN sys_dept AS d ON d.dept_Id = user.dept_Id
+        WHERE
+            user.user_id = #{userId}
+        ORDER BY
+            user.user_id DESC
+    </select>
 </mapper>

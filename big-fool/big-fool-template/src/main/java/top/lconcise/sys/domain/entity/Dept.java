@@ -27,7 +27,7 @@ public class Dept implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    private Long id;
+    private Long deptId;
 
     @ApiModelProperty(value = "部门名称")
     private String name;
@@ -47,7 +47,8 @@ public class Dept implements Serializable {
     private LocalDateTime updateTime;
 
     @ApiModelProperty(value = "0-正常，1-删除")
-    private Boolean isDeleted;
+    @TableField(value = "is_deleted")
+    private Boolean deleted;
 
 
 }

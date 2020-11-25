@@ -27,7 +27,7 @@ public class Role implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    private Long id;
+    private Long roleId;
 
     @ApiModelProperty(value = "角色名称")
     private String roleName;
@@ -47,7 +47,8 @@ public class Role implements Serializable {
     private LocalDateTime updateTime;
 
     @ApiModelProperty(value = "0-正常，1-删除")
-    private Boolean idDeleted;
+    @TableField(value = "is_deleted")
+    private Boolean deleted;
 
 
 }

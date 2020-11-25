@@ -26,8 +26,8 @@ public class User implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @ApiModelProperty(value = "主键ID")
-    @TableId(value = "id", type = IdType.AUTO)
-    private Long id;
+    @TableId(value = "user_id", type = IdType.AUTO)
+    private Long userId;
 
     @ApiModelProperty(value = "用户名")
     private String username;
@@ -51,10 +51,12 @@ public class User implements Serializable {
     private LocalDateTime updateTime;
 
     @ApiModelProperty(value = "0-正常，1-锁定")
-    private Boolean isLocked;
+    @TableField(value = "is_locked")
+    private Boolean locked;
 
     @ApiModelProperty(value = "0-正常，1-删除")
-    private Boolean isDeleted;
+    @TableField(value = "is_deleted")
+    private Boolean deleted;
 
 
 }
