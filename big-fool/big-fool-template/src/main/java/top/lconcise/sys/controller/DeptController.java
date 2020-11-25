@@ -37,4 +37,10 @@ public class DeptController {
     public RestResult removeById(@PathVariable Long id) {
         return RestResultUtils.success(deptService.removeDeptById(id));
     }
+
+    @ApiOperation("返回部门树")
+    @GetMapping("/tree")
+    public RestResult listDeptTree() {
+        return RestResultUtils.success(deptService.listDeptDrees());
+    }
 }

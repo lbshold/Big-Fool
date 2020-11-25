@@ -6,12 +6,15 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import top.lconcise.sys.domain.dto.DeptTree;
 import top.lconcise.sys.domain.entity.Dept;
 import top.lconcise.sys.domain.entity.DeptRelation;
 import top.lconcise.sys.mapper.DeptMapper;
 import top.lconcise.sys.service.IDeptRelationService;
 import top.lconcise.sys.service.IDeptService;
+import top.lconcise.sys.util.TreeUtil;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -49,5 +52,23 @@ public class DeptServiceImpl extends ServiceImpl<DeptMapper, Dept> implements ID
         // 删除部门级联关系
         deptRelationService.removeDeptRelationById(deptId);
         return Boolean.TRUE;
+    }
+
+    @Override
+    public List<DeptTree> listDeptDrees() {
+        return getDeptTree(baseMapper.selectList(Wrappers.emptyWrapper()));
+    }
+
+    private List<DeptTree> getDeptTree(List<Dept> deptList) {
+        List<DeptTree> deptTrees = deptList.stream().filter(dept -> !dept.getDeptId().equals(dept.getParentId()))
+                .sorted(Comparator.comparingInt(Dept::getSort))
+                .map(dept -> {
+                    DeptTree node = new DeptTree();
+                    node.setId(dept.getDeptId());
+                    node.setParentId(dept.getParentId());
+                    node.setName(dept.getName());
+                    return node;
+                }).collect(Collectors.toList());
+        return TreeUtil.build(deptTrees, 0L);
     }
 }

@@ -1,7 +1,10 @@
 package top.lconcise.sys.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
+import top.lconcise.sys.domain.dto.DeptTree;
 import top.lconcise.sys.domain.entity.Dept;
+
+import java.util.List;
 
 /**
  * <p>
@@ -28,4 +31,11 @@ public interface IDeptService extends IService<Dept> {
      * @return
      */
     Boolean removeDeptById(Long deptId);
+
+    /**
+     * 查询部门树菜单.
+     *
+     * @return
+     */
+    List<DeptTree> listDeptDrees();
 }
