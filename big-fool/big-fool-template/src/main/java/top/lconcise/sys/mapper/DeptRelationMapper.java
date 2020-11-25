@@ -5,7 +5,7 @@ import top.lconcise.sys.domain.entity.DeptRelation;
 
 /**
  * <p>
- *  Mapper 接口
+ * Mapper 接口
  * </p>
  *
  * @author liusj
@@ -13,4 +13,10 @@ import top.lconcise.sys.domain.entity.DeptRelation;
  */
 public interface DeptRelationMapper extends BaseMapper<DeptRelation> {
 
+    /**
+     * 根据部门id 删除部门关系表.
+     *
+     * @param id
+     */
+    void deleteDeptRelationsById(Long id);
 }

@@ -2,4 +2,11 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="top.lconcise.sys.mapper.DeptRelationMapper">
 
+    <delete id="deleteDeptRelationsById">
+        DELETE
+        FROM
+            sys_dept_relation
+        WHERE
+            son IN ( SELECT temp.son FROM ( SELECT son FROM sys_dept_relation WHERE father = #{id} ) temp )
+    </delete>
 </mapper>

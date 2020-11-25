@@ -5,7 +5,7 @@ import top.lconcise.sys.domain.entity.Dept;
 
 /**
  * <p>
- *  服务类
+ * 服务类
  * </p>
  *
  * @author liusj
@@ -13,4 +13,19 @@ import top.lconcise.sys.domain.entity.Dept;
  */
 public interface IDeptService extends IService<Dept> {
 
+    /**
+     * 添加部门信息.
+     *
+     * @param dept
+     * @return
+     */
+    Boolean saveDept(Dept dept);
+
+    /**
+     * 删除部门.
+     *
+     * @param deptId 部门id
+     * @return
+     */
+    Boolean removeDeptById(Long deptId);
 }
