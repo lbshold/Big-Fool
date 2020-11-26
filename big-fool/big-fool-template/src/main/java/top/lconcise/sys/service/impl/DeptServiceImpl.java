@@ -71,4 +71,16 @@ public class DeptServiceImpl extends ServiceImpl<DeptMapper, Dept> implements ID
                 }).collect(Collectors.toList());
         return TreeUtil.build(deptTrees, 0L);
     }
+
+    @Override
+    public Boolean updateDeptById(Dept dept) {
+        // 更新部门信息
+        baseMapper.updateById(dept);
+        // 更新部门关系
+        DeptRelation deptRelation = new DeptRelation();
+        deptRelation.setFather(dept.getParentId());
+        deptRelation.setSon(dept.getDeptId());
+        deptRelationService.updateDeptRelation(deptRelation);
+        return Boolean.TRUE;
+    }
 }

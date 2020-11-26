@@ -19,4 +19,11 @@ public interface DeptRelationMapper extends BaseMapper<DeptRelation> {
      * @param id
      */
     void deleteDeptRelationsById(Long id);
+
+    /**
+     * 更新部门关系.
+     *
+     * @param deptRelation
+     */
+    void updateDeptRelation(DeptRelation deptRelation);
 }

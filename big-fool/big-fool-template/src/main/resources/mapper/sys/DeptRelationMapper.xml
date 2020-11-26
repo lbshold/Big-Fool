@@ -9,4 +9,24 @@
         WHERE
             son IN ( SELECT temp.son FROM ( SELECT son FROM sys_dept_relation WHERE father = #{id} ) temp )
     </delete>
+
+    <!--更新部门关系表-->
+    <!--1.删除原有的表关系-->
+    <!--2.插入新的表关系-->
+    <update id="updateDeptRelation">
+        DELETE FROM sys_dept_relation
+        WHERE
+        	`son` IN ( SELECT temp.son FROM
+        	( SELECT `son` FROM sys_dept_relation WHERE father = #{son} ) temp )
+        AND `father` IN (SELECT temp.father FROM (SELECT father FROM
+        	sys_dept_relation WHERE `son` = #{son} AND `father` != `son` ) temp );
+
+        INSERT INTO sys_dept_relation (`father`, `son`)
+		SELECT a.father, b.son
+		FROM sys_dept_relation a
+			CROSS JOIN sys_dept_relation b
+		WHERE a.son = #{father}
+			AND b.father = #{son};
+    </update>
+
 </mapper>

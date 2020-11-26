@@ -27,4 +27,11 @@ public interface IDeptRelationService extends IService<DeptRelation> {
      * @param id
      */
     void removeDeptRelationById(Long id);
+
+    /**
+     * 更新部门关系.
+     *
+     * @param deptRelation
+     */
+    void updateDeptRelation(DeptRelation deptRelation);
 }

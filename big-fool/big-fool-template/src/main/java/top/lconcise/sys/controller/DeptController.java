@@ -43,4 +43,10 @@ public class DeptController {
     public RestResult listDeptTree() {
         return RestResultUtils.success(deptService.listDeptDrees());
     }
+
+    @ApiOperation("编辑部门")
+    @PutMapping
+    public RestResult update(@RequestBody Dept dept) {
+        return RestResultUtils.success(deptService.updateDeptById(dept));
+    }
 }

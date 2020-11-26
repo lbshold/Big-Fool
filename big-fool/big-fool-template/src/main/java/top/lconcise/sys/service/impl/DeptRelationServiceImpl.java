@@ -47,4 +47,9 @@ public class DeptRelationServiceImpl extends ServiceImpl<DeptRelationMapper, Dep
     public void removeDeptRelationById(Long id) {
         baseMapper.deleteDeptRelationsById(id);
     }
+
+    @Override
+    public void updateDeptRelation(DeptRelation deptRelation) {
+        baseMapper.updateDeptRelation(deptRelation);
+    }
 }
