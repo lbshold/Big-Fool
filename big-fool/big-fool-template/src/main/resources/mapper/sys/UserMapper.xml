@@ -35,17 +35,34 @@
             d.`name` AS deptName
     </sql>
 
-    <select id="getUserVOById" resultMap="userVoResultMap">
+    <select id="getUserVoById" resultMap="userVoResultMap">
         SELECT
-            <include refid="userRoleDeptSql"/>
+        <include refid="userRoleDeptSql"/>
         FROM
-            sys_user AS `user`
+        sys_user AS `user`
         LEFT JOIN sys_user_role AS ur ON ur.user_id = ur.user_id
         LEFT JOIN sys_role AS r ON ur.role_id = r.role_id
         LEFT JOIN sys_dept AS d ON d.dept_Id = user.dept_Id
         WHERE
-            user.user_id = #{userId}
+        user.user_id = #{userId}
         ORDER BY
-            user.user_id DESC
+        user.user_id DESC
+    </select>
+
+    <select id="getUserVosPage" resultMap="userVoResultMap">
+        SELECT
+        <include refid="userRoleDeptSql"/>
+        FROM
+        sys_user AS `user`
+        LEFT JOIN sys_user_role AS ur ON ur.user_id = ur.user_id
+        LEFT JOIN sys_role AS r ON ur.role_id = r.role_id
+        LEFT JOIN sys_dept AS d ON d.dept_Id = user.dept_Id
+        <where>
+            `user`.is_deleted = 0
+            <if test="query.username != null and query.username !=''">
+                and `user`.username LIKE CONCAT('%',#{query.username},'%')
+            </if>
+        </where>
+        ORDER BY `user`.user_id DESC
     </select>
 </mapper>

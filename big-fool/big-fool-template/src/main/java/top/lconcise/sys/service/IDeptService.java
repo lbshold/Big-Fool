@@ -40,6 +40,13 @@ public interface IDeptService extends IService<Dept> {
     List<DeptTree> listDeptDrees();
 
     /**
+     * 添加部门信息.
+     *
+     * @return
+     */
+    List<DeptTree> listCurrentUserDeptTrees();
+
+    /**
      * 更新部门.
      *
      * @param dept 部门信息

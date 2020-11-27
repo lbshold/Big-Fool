@@ -59,6 +59,12 @@ public class DeptServiceImpl extends ServiceImpl<DeptMapper, Dept> implements ID
         return getDeptTree(baseMapper.selectList(Wrappers.emptyWrapper()));
     }
 
+    @Override
+    public List<DeptTree> listCurrentUserDeptTrees() {
+
+        return null;
+    }
+
     private List<DeptTree> getDeptTree(List<Dept> deptList) {
         List<DeptTree> deptTrees = deptList.stream().filter(dept -> !dept.getDeptId().equals(dept.getParentId()))
                 .sorted(Comparator.comparingInt(Dept::getSort))

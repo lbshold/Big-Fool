@@ -44,6 +44,12 @@ public class DeptController {
         return RestResultUtils.success(deptService.listDeptDrees());
     }
 
+    @ApiOperation("返回当前用户树")
+    @GetMapping("/user-tree")
+    public RestResult listCurrentUserDeptTrees() {
+        return RestResultUtils.success(deptService.listCurrentUserDeptTrees());
+    }
+
     @ApiOperation("编辑部门")
     @PutMapping
     public RestResult update(@RequestBody Dept dept) {

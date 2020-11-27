@@ -2,6 +2,8 @@ package top.lconcise.sys.service.impl;
 
 import cn.hutool.core.bean.BeanUtil;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -74,6 +76,11 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
 
     @Override
     public UserVO getUserVoById(Long id) {
-        return baseMapper.getUserVOById(id);
+        return baseMapper.getUserVoById(id);
+    }
+
+    @Override
+    public IPage getUserVosPage(Page page, UserDTO userDTO) {
+        return baseMapper.getUserVosPage(page, userDTO);
     }
 }
