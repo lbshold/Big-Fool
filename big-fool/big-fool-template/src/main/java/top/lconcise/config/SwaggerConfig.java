@@ -1,9 +1,8 @@
-package top.lconcise;
+package top.lconcise.config;
 
 import io.swagger.annotations.ApiOperation;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Profile;
 import springfox.documentation.builders.ApiInfoBuilder;
 import springfox.documentation.builders.OAuthBuilder;
 import springfox.documentation.builders.PathSelectors;
@@ -33,7 +32,7 @@ public class SwaggerConfig {
 
     @Bean
     public Docket createRestApi() {
-        return new Docket(DocumentationType.OAS_30)
+        return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(apiInfo())
                 .select()
                 .apis(RequestHandlerSelectors.withMethodAnnotation(ApiOperation.class))
@@ -59,7 +58,7 @@ public class SwaggerConfig {
      * 允许认证的scope
      */
     private AuthorizationScope[] scopes() {
-        AuthorizationScope authorizationScope = new AuthorizationScope("all", "All");
+        AuthorizationScope authorizationScope = new AuthorizationScope("all", "");
         AuthorizationScope[] authorizationScopes = new AuthorizationScope[1];
         authorizationScopes[0] = authorizationScope;
         return authorizationScopes;

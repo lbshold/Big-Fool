@@ -12,6 +12,7 @@ import top.lconcise.sys.MyUser;
  * @author liusj
  * @date 2020/12/3
  */
+@Configuration
 public class UserDetailService implements UserDetailsService {
 
     @Autowired
