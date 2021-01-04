@@ -29,6 +29,17 @@
             <artifactId>big-fool-common-swagger</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
+
+        <!--nacos-->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-alibaba-nacos-discovery</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-alibaba-nacos-config</artifactId>
+        </dependency>
+
     </dependencies>
 
 </project>
