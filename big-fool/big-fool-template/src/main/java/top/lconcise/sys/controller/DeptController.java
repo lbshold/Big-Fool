@@ -55,4 +55,16 @@ public class DeptController {
     public RestResult update(@RequestBody Dept dept) {
         return RestResultUtils.success(deptService.updateDeptById(dept));
     }
+
+    @ApiOperation("通过id查询部门详情")
+    @GetMapping("/{id}")
+    public RestResult getById(@PathVariable Long id) {
+        return RestResultUtils.success(deptService.getById(id));
+    }
+
+    @ApiOperation("删除部门")
+    @DeleteMapping("/{id}")
+    public RestResult deleteById(@PathVariable Long id) {
+        return RestResultUtils.success(deptService.deleteById(id));
+    }
 }

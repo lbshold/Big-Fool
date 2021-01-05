@@ -1,11 +1,14 @@
 package top.lconcise.sys.service.impl;
 
 import cn.hutool.core.collection.CollUtil;
+import cn.hutool.core.collection.CollectionUtil;
+import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import top.lconcise.security.SecurityUtils;
 import top.lconcise.sys.domain.dto.DeptTree;
 import top.lconcise.sys.domain.entity.Dept;
 import top.lconcise.sys.domain.entity.DeptRelation;
@@ -61,10 +64,24 @@ public class DeptServiceImpl extends ServiceImpl<DeptMapper, Dept> implements ID
 
     @Override
     public List<DeptTree> listCurrentUserDeptTrees() {
+        Long deptId = SecurityUtils.getUser().getDeptId();
 
-        return null;
+        List<Long> deptIds = deptRelationService.list(Wrappers.<DeptRelation>query().lambda().eq(DeptRelation::getFather, deptId))
+                .stream()
+                .map(DeptRelation::getSon)
+                .collect(Collectors.toList());
+
+        List<Dept> depts = baseMapper.selectBatchIds(deptIds);
+
+        return getDeptTree(depts);
     }
 
+    /**
+     * 构建部门树.
+     *
+     * @param deptList
+     * @return
+     */
     private List<DeptTree> getDeptTree(List<Dept> deptList) {
         List<DeptTree> deptTrees = deptList.stream().filter(dept -> !dept.getDeptId().equals(dept.getParentId()))
                 .sorted(Comparator.comparingInt(Dept::getSort))
@@ -87,6 +104,23 @@ public class DeptServiceImpl extends ServiceImpl<DeptMapper, Dept> implements ID
         deptRelation.setFather(dept.getParentId());
         deptRelation.setSon(dept.getDeptId());
         deptRelationService.updateDeptRelation(deptRelation);
+        return Boolean.TRUE;
+    }
+
+    @Override
+    public Boolean deleteById(Long id) {
+        // 级联删除部门
+        List<Long> sonDeptIds = deptRelationService.list(Wrappers.<DeptRelation>query().lambda().eq(DeptRelation::getFather, id))
+                .stream()
+                .map(DeptRelation::getSon)
+                .collect(Collectors.toList());
+
+        if(CollectionUtil.isNotEmpty(sonDeptIds)){
+            this.removeByIds(sonDeptIds);
+        }
+
+        // 删除部门级联关系
+       deptRelationService.deleteDeptRelationById(id);
         return Boolean.TRUE;
     }
 }

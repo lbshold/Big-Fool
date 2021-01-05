@@ -40,7 +40,7 @@ public interface IDeptService extends IService<Dept> {
     List<DeptTree> listDeptDrees();
 
     /**
-     * 添加部门信息.
+     * 查询用户部门树.
      *
      * @return
      */
@@ -53,4 +53,12 @@ public interface IDeptService extends IService<Dept> {
      * @return 成功、失败
      */
     Boolean updateDeptById(Dept dept);
+
+    /**
+     * 删除部门.
+     *
+     * @param id 部门id
+     * @return
+     */
+    Boolean deleteById(Long id);
 }

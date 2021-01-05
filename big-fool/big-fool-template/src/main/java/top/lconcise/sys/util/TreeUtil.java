@@ -15,6 +15,7 @@ public class TreeUtil {
 
     /**
      * 两层循环实现建树
+     *
      * @param treeNodes 传入的树节点列表
      * @return
      */
@@ -29,7 +30,7 @@ public class TreeUtil {
             }
 
             for (T it : treeNodes) {
-                if (it.getParentId() == treeNode.getId()) {
+                if (it.getParentId().equals(treeNode.getId())) {
                     if (treeNode.getChildren() == null) {
                         treeNode.setChildren(new ArrayList<>());
                     }
@@ -43,6 +44,7 @@ public class TreeUtil {
 
     /**
      * 使用递归方法建树
+     *
      * @param treeNodes
      * @return
      */
@@ -58,6 +60,7 @@ public class TreeUtil {
 
     /**
      * 递归查找子节点
+     *
      * @param treeNodes
      * @return
      */

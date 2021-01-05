@@ -52,4 +52,9 @@ public class DeptRelationServiceImpl extends ServiceImpl<DeptRelationMapper, Dep
     public void updateDeptRelation(DeptRelation deptRelation) {
         baseMapper.updateDeptRelation(deptRelation);
     }
+
+    @Override
+    public void deleteDeptRelationById(Long deptId) {
+
+    }
 }
