@@ -19,7 +19,7 @@ import top.lconcise.sys.service.IDeptService;
  * @since 2020-11-19
  */
 @RestController
-@RequestMapping("/depts")
+@RequestMapping("/sys/dept")
 @Api(value = "dept", tags = "部门管理模块")
 public class DeptController {
 

@@ -6,6 +6,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * 树节点.
+ *
  * @author liusj
  * @date 2020/11/25
  */

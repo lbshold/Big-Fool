@@ -66,7 +66,7 @@ public class TreeUtil {
      */
     public <T extends TreeNode> T findChildren(T treeNode, List<T> treeNodes) {
         for (T it : treeNodes) {
-            if (treeNode.getId() == it.getParentId()) {
+            if (treeNode.getId().equals(it.getParentId())) {
                 if (treeNode.getChildren() == null) {
                     treeNode.setChildren(new ArrayList<>());
                 }
@@ -75,4 +75,6 @@ public class TreeUtil {
         }
         return treeNode;
     }
+
+    public List
 }

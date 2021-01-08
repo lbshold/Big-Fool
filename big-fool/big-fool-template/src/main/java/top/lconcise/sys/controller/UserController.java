@@ -20,7 +20,7 @@ import top.lconcise.sys.service.IUserService;
  * @since 2020-11-19
  */
 @RestController
-@RequestMapping("/users")
+@RequestMapping("/sys/user")
 @Api(value = "user", tags = "用户管理模块")
 public class UserController {
 

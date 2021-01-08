@@ -1,5 +1,7 @@
 package top.lconcise.practice.thread;
 
+import java.util.concurrent.locks.Lock;
+
 /**
  * @author liusj
  * @date 2020/12/30
@@ -22,5 +24,6 @@ public class ThreadDemo {
         consumerThreadO2.start();
         consumerThreadO3.start();
         producerThread01.start();
+
     }
 }
