@@ -13,7 +13,7 @@ public class ThreadDemo {
 
     public static void main(String[] args) {
 
-        // 继承Thread ，实现run方法，创建线程
+        // 1.继承Thread ，实现run方法，创建线程
         Thread thread01 = new Thread() {
             @Override
             public void run() {
@@ -23,7 +23,7 @@ public class ThreadDemo {
 
         thread01.start();
 
-        // 匿名实现runnable接口，创建线程
+        // 2.匿名实现runnable接口，创建线程
         Thread thread02 = new Thread(() -> {
             System.out.println("我是线程02");
         });
