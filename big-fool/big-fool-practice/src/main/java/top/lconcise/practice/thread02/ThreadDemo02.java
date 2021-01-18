@@ -6,7 +6,7 @@ import java.util.concurrent.TimeUnit;
  * @author liusj
  * @date 2021/1/13
  */
-public class ThreadDemo03 {
+public class ThreadDemo02 {
 
     public static void main(String[] args) {
 
