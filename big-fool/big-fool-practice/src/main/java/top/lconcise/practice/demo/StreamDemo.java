@@ -1,4 +1,4 @@
-package top.lconcise.practice;
+package top.lconcise.practice.demo;
 
 import java.io.IOException;
 import java.nio.charset.Charset;

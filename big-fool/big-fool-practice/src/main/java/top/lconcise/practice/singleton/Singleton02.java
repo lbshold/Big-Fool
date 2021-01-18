@@ -1,4 +1,4 @@
-package top.lconcise.practice;
+package top.lconcise.practice.singleton;
 
 /**
  * 饿汉式.

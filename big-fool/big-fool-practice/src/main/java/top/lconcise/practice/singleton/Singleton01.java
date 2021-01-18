@@ -1,4 +1,4 @@
-package top.lconcise.practice;
+package top.lconcise.practice.singleton;
 
 /**
  * 懒汉式(线程安全).

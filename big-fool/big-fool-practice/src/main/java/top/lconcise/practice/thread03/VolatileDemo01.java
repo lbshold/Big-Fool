@@ -1,4 +1,4 @@
-package top.lconcise.practice;
+package top.lconcise.practice.thread03;
 
 import java.util.concurrent.TimeUnit;
 

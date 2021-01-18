@@ -1,4 +1,4 @@
-package top.lconcise.practice;
+package top.lconcise.practice.thread04;
 
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.atomic.AtomicInteger;

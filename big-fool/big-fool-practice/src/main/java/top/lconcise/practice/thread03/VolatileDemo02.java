@@ -1,4 +1,4 @@
-package top.lconcise.practice;
+package top.lconcise.practice.thread03;
 
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.IntStream;

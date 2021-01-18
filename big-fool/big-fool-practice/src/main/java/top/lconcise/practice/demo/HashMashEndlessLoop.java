@@ -1,4 +1,4 @@
-package top.lconcise.practice;
+package top.lconcise.practice.demo;
 
 import java.util.HashMap;
 

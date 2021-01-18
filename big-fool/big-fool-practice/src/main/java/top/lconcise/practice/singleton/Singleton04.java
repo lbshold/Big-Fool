@@ -1,4 +1,4 @@
-package top.lconcise.practice;
+package top.lconcise.practice.singleton;
 
 /**
  * 静态内部类.
