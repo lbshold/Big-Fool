@@ -1,4 +1,4 @@
-package top.lconcise.practice.thread04;
+package top.lconcise.practice.thread_threadlocal;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;

@@ -1,4 +1,4 @@
-package top.lconcise.practice.thread03;
+package top.lconcise.practice.thread_volatile;
 
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.IntStream;

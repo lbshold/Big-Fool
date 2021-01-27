@@ -1,4 +1,4 @@
-package top.lconcise.practice.thread03;
+package top.lconcise.practice.thread_volatile;
 
 /**
  * @author liusj

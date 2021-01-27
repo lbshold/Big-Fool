@@ -1,4 +1,4 @@
-package top.lconcise.practice.thread02;
+package top.lconcise.practice.thread_callable;
 
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicInteger;

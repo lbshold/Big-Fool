@@ -1,4 +1,4 @@
-package top.lconcise.practice.thread02;
+package top.lconcise.practice.thread_callable;
 
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.TimeUnit;
