@@ -28,55 +28,55 @@ public class Demo {
 //        new Thread(futureTask01).start();
 //        new Thread(futureTask02).start();
 
-        ExecutorService executorService = Executors.newSingleThreadExecutor();
-        Future<String> future02 = executorService.submit(new MyTask02());
-        Future<String> future01 = executorService.submit(new MyTask01(future02));
+//        ExecutorService executorService = Executors.newSingleThreadExecutor();
+//        Future<String> future02 = executorService.submit(new MyTask02());
+//        Future<String> future01 = executorService.submit(new MyTask01(future02));
+//
+//        System.out.println(future01.get());
 
-        System.out.println(future01.get());
-
-        executorService.shutdown();
+//        executorService.shutdown();
     }
 }
 
-class MyTask01 implements Callable<String> {
-
-    private Future<String> futureTask;
-
-    public MyTask01(Future futureTask) {
-        this.futureTask = futureTask;
-    }
-
-    @Override
-    public String call() throws Exception {
-        System.out.println("洗水壶");
-        TimeUnit.SECONDS.sleep(1);
-
-        System.out.println("烧开水");
-        TimeUnit.SECONDS.sleep(15);
-
-        String tea = futureTask.get();
-
-        System.out.println("泡茶");
-        TimeUnit.SECONDS.sleep(3);
-
-        return "上茶" + tea;
-    }
-}
-
-class MyTask02 implements Callable<String>{
-
-    @Override
-    public String call() throws Exception {
-
-        System.out.println("洗茶壶");
-        TimeUnit.SECONDS.sleep(1);
-
-        System.out.println("洗茶杯");
-        TimeUnit.SECONDS.sleep(1);
-
-        System.out.println("拿茶叶");
-        TimeUnit.SECONDS.sleep(1);
-
-        return "龙井茶";
-    }
-}
+//class MyTask01 implements Callable<String> {
+//
+//    private Future<String> futureTask;
+//
+//    public MyTask01(Future futureTask) {
+//        this.futureTask = futureTask;
+//    }
+//
+//    @Override
+//    public String call() throws Exception {
+//        System.out.println("洗水壶");
+//        TimeUnit.SECONDS.sleep(1);
+//
+//        System.out.println("烧开水");
+//        TimeUnit.SECONDS.sleep(15);
+//
+//        String tea = futureTask.get();
+//
+//        System.out.println("泡茶");
+//        TimeUnit.SECONDS.sleep(3);
+//
+//        return "上茶" + tea;
+//    }
+//}
+//
+//class MyTask02 implements Callable<String>{
+//
+//    @Override
+//    public String call() throws Exception {
+//
+//        System.out.println("洗茶壶");
+//        TimeUnit.SECONDS.sleep(1);
+//
+//        System.out.println("洗茶杯");
+//        TimeUnit.SECONDS.sleep(1);
+//
+//        System.out.println("拿茶叶");
+//        TimeUnit.SECONDS.sleep(1);
+//
+//        return "龙井茶";
+//    }
+//}
