@@ -55,11 +55,11 @@ public class CodeGenerator {
 
         // 数据源配置
         DataSourceConfig dsc = new DataSourceConfig();
-        dsc.setUrl("jdbc:mysql://localhost:3306/test?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8&useSSL=true");
+        dsc.setUrl("jdbc:mysql://192.168.2.225:3306/test_fenghuang_zongzhi?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8&useSSL=true");
         // dsc.setSchemaName("public");
         dsc.setDriverName("com.mysql.cj.jdbc.Driver");
         dsc.setUsername("root");
-        dsc.setPassword("root");
+        dsc.setPassword("zdxf@xian");
         mpg.setDataSource(dsc);
 
         // 包配置
