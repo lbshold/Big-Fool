@@ -13,6 +13,5 @@ public class NodeDemo {
         BigDecimal bigDecimal = new BigDecimal(11.23);
         System.out.println(String.valueOf(bigDecimal.floatValue()));
 
-        HashMap
     }
 }
