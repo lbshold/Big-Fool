@@ -10,5 +10,11 @@ import java.math.BigDecimal;
  */
 public interface IBaseCount {
 
+    /**
+     * 商品支付金额.
+     *
+     * @param orderDetail
+     * @return
+     */
     BigDecimal countPayMoney(OrderDetail orderDetail);
 }
