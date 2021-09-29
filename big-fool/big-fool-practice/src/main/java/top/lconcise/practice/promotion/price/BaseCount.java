@@ -3,7 +3,7 @@ package top.lconcise.practice.promotion.price;
 import java.math.BigDecimal;
 
 /**
- * 支付基本类.
+ * 支付基础实现类.
  *
  * @author liusj
  * @date 2021/8/23
