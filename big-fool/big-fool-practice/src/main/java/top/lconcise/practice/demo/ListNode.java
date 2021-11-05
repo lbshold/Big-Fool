@@ -35,6 +35,12 @@ public class ListNode {
         System.out.println();
     }
 
+    /**
+     * 递归.
+     *
+     * @param head
+     * @return
+     */
     public ListNode reverse01(ListNode head) {
         if (head == null || head.next == null) {
             return head;
@@ -47,6 +53,12 @@ public class ListNode {
         return newHead;
     }
 
+    /**
+     * 迭代.
+     *
+     * @param head
+     * @return
+     */
     public ListNode reverse02(ListNode head) {
         ListNode pre = null;
         ListNode current = head;

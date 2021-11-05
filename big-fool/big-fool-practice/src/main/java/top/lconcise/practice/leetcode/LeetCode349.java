@@ -4,6 +4,8 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
+ * 两个数组的交集.
+ *
  * @author liusj
  * @date 2021/9/26
  */

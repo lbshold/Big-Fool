@@ -1,5 +1,8 @@
 package top.lconcise.practice.thread_callable;
 
+import org.springframework.util.DigestUtils;
+
+import java.util.HashMap;
 import java.util.concurrent.*;
 
 /**
@@ -22,6 +25,9 @@ public class Demo {
      *    2. T1 的泡茶要等T2拿到茶叶， future.get()
      */
     public static void main(String[] args) throws Exception{
+
+        System.out.println(DigestUtils.md5DigestAsHex(("ZHFH_" + "15114818612").getBytes()));
+
 //        FutureTask futureTask02 = new FutureTask(new MyTask02());
 //        FutureTask futureTask01 = new FutureTask(new MyTask01(futureTask02));
 //
