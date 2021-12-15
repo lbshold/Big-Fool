@@ -1,7 +1,7 @@
 package top.lconcise.practice.leetcode;
 
 /**
- * 19. 删除链表倒数第
+ * 19. 删除链表倒数第 N 个节点
  *
  * @author: liusj
  * @date: 2021/12/8
@@ -19,13 +19,17 @@ public class LeetCode19 {
 
         ListNode listNode = removeNthFromEnd(head, 1);
 
-        listNode.forEach(listNode);
+        ListNode.forEach(listNode);
     }
 
+    /**
+     * 双指针.
+     *
+     * @param head
+     * @param n
+     * @return
+     */
     public static ListNode removeNthFromEnd(ListNode head, int n) {
-        if (head == null || n == 0) {
-            return head;
-        }
 
         ListNode pre = new ListNode(0);
         pre.next = head;

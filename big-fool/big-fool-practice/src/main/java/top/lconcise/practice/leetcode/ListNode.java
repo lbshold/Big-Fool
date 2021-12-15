@@ -31,7 +31,7 @@ public class ListNode {
         head.next = newNode;
     }
 
-    public void forEach(ListNode head) {
+    public static void forEach(ListNode head) {
         while (head != null) {
             System.out.print(head.val + " ");
             head = head.next;
