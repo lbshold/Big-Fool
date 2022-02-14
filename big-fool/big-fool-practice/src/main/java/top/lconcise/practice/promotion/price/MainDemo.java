@@ -1,10 +1,7 @@
 package top.lconcise.practice.promotion.price;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * @author liusj
@@ -13,14 +10,34 @@ import java.util.Map;
 public class MainDemo {
 
     public static void main(String[] args) throws CloneNotSupportedException {
-        Order order = new Order();
-        init(order);
+//        Order order = new Order();
+//        init(order);
+//
+//        for (OrderDetail orderDetail : order.getList()) {
+//            BigDecimal payMoney = PromotionFactory.getPayMoney(orderDetail);
+//            orderDetail.setPayMoney(payMoney);
+//            System.out.println("最终支付金额：" + orderDetail.getPayMoney());
+//        }
 
-        for (OrderDetail orderDetail : order.getList()) {
-            BigDecimal payMoney = PromotionFactory.getPayMoney(orderDetail);
-            orderDetail.setPayMoney(payMoney);
-            System.out.println("最终支付金额：" + orderDetail.getPayMoney());
+        List<Integer> list = new ArrayList<>();
+        list.add(1);
+        list.add(2);
+        list.add(3);
+        list.add(4);
+
+        Iterator<Integer> iterator = list.iterator();
+        list.remove(1);
+        Iterator<Integer> iterator02 = list.iterator();
+
+        while (iterator.hasNext()){
+            System.out.print(iterator.next());
         }
+        System.out.println();
+
+        while (iterator02.hasNext()){
+            System.out.print(iterator02.next());
+        }
+        System.out.println();
     }
 
     private static void init(Order order) throws CloneNotSupportedException {
@@ -68,7 +85,5 @@ public class MainDemo {
 
         orderDetails.add(orderDetail);
         order.setList(orderDetails);
-
-
     }
 }

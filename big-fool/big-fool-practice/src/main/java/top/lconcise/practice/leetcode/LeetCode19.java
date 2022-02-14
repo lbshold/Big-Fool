@@ -20,9 +20,10 @@ public class LeetCode19 {
 
         head.forEach(head);
 
-        ListNode listNode = removeNthFromEnd02(head, 1);
+        ListNode listNode = removeNthFromEnd01(head, 1);
 
         ListNode.forEach(listNode);
+        ListNode.forEach(head);
     }
 
     /**
@@ -99,7 +100,7 @@ public class LeetCode19 {
 
     /**
      * 方法三：双指针.
-     *
+     * <p>
      * 时间复杂度：O(L),其中L是链表的长度
      * 空间复杂度：O(1)
      *
